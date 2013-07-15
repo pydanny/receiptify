@@ -22,10 +22,8 @@ Usage
 
 4. Email
 
-5. Profit
-
-Screenshot from sample data
-----------------------------
+Screenshot
+----------
 
 .. image:: ../master/sample.png
 
