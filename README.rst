@@ -40,8 +40,18 @@ Input
 Usage
 ------
 
+1. Shell fun (TODO - make this one command)
+
 .. code-block:: bash
 
     $ simplicity receipts.rst > input/receipts.json
     $ python receiptify.py receipts.rst
     $ complexity
+
+2. Point your browser at http://127.0.0.1:9090/receipts/
+
+3. Save as PDF
+
+4. Email
+
+5. Profit
