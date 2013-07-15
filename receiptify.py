@@ -7,5 +7,4 @@ if __name__ == "__main__":
     if filename.endswith("receiptify.py"):
         print("ERROR! Please enter a ReStructuredText filename!")
         sys.exit()
-    envoy.run("simplicity receipts.rst")
-    envoy.run("complexity")
+    envoy.run("simplicity receipts.rst > input/receipts.json")

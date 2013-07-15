@@ -79,19 +79,20 @@
                             {% set price = data.1 %}
                             {% set pk = data.2 %}
                             {% set title = data.3 %}
+                            {% set subtotal = quantity|float * price|float %}
                             <tr>
                                 <td>{{ pk }}</td>
                                 <td>{{ quantity }}</td>
-                                <td>${{ price|float }}</td>
+                                <td>${{ '%0.2f'| format(price|float) }}</td>
                                 <td>{{ title }}</td>
-                                <td>${{ quantity|float * price|float }}</td>
+                                <td>${{ '%0.2f'| format(subtotal|float) }}</td>
                             </tr>
                             {% set total = total + quantity|float * price|float %}
                         {% endif %}
                         {% if loop.last %}
                             <tr class="success">
                                 <td colspan="4">Total</td>
-                                <td>${{ total }}</td>
+                                <td>${{ '%0.2f'| format(total|float) }}</td>
                             </tr>
                         {% endif %}
                     {% endfor %}
