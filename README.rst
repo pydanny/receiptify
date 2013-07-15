@@ -27,7 +27,7 @@ Usage
 Screenshot from sample data
 ----------------------------
 
-.. image:: master/sample.png
+.. image:: ../master/sample.png
 
 
 Simplicity-based Format
