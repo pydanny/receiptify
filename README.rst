@@ -27,7 +27,7 @@ Usage
 Screenshot from sample data
 ----------------------------
 
-.. image:: https://github.com/pydanny/receiptify/blob/master/screenshot.png
+.. image:: https://github.com/pydanny/receiptify/blob/master/sample.png
 
 
 Simplicity-based Format
