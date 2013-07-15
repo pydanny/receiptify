@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% set seller = receipts.0 %}
+{% set cust = receipts.1 %}
+{% set products = receipts.2 %}
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="span8">
+            <p><strong>{{ seller.company }}</strong><br />
+            {{ seller.address1 }}<br />
+            {{ seller.address2 }}<br />
+            {{ seller.address3 }}<br />
+            {{ seller.country }}<br />
+            {{ seller.email }}</p>
+        </div>
+        <div class="span4 pull-right">
+            <p>16/7/2013</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span2">
+            <p><strong>Purchaser:</strong></p>
+        </div>
+        <div class="span10">
+            <p>
+            {% if cust.person %}
+                {{ cust.person }}<br />
+            {% endif %}
+            {% if cust.company %}
+                {{ cust.company }}<br />
+            {% endif %}
+            {% if cust.address3 %}
+                {{ cust.address1 }}<br />
+            {% endif %}
+            {% if cust.address2 %}
+                {{ cust.address2 }}<br />
+            {% endif %}
+            {% if cust.address3 %}
+                {{ cust.address3 }}<br />
+            {% endif %}
+            {% if cust.address4 %}
+                {{ cust.address3 }}<br />
+            {% endif %}
+            {% if cust.country %}
+                {{ cust.country }}<br />
+            {% endif %}
+            <p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Item #</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Product</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% set total = 0 %}
+                    {% for key, product in products.items() %}
+                        {% if key.startswith("item") %}
+                            {% set data = product.split("|") %}
+                            {% set quantity = data.0 %}
+                            {% set price = data.1 %}
+                            {% set pk = data.2 %}
+                            {% set title = data.3 %}
+                            <tr>
+                                <td>{{ pk }}</td>
+                                <td>{{ quantity }}</td>
+                                <td>${{ price|float }}</td>
+                                <td>{{ title }}</td>
+                                <td>${{ quantity|float * price|float }}</td>
+                            </tr>
+                            {% set total = total + quantity|float * price|float %}
+                        {% endif %}
+                        {% if loop.last %}
+                            <tr class="success">
+                                <td colspan="4">Total</td>
+                                <td>${{ total }}</td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+{% endblock content%}
