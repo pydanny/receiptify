@@ -38,9 +38,13 @@ setup(
     author_email='pydanny@gmail.com',
     url='https://github.com/pydanny/receiptify',
     license='MIT',
-    py_modules=['simplicity', ],
+    py_modules=['receiptify', ],
     include_package_data=True,
     zip_safe=False,
+    install_requires=[
+            'complexity',
+            'simplicity'
+        ],
     entry_points={
         'console_scripts': [
             'receiptify=receiptify:command_line_runner',

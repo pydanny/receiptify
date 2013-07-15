@@ -18,18 +18,20 @@ Input
     :address2: #285
     :address3: Westlake Village, CA 91361
     :country: United States
+    :email: authors@cartwheelweb.com
     
-    Customer
+    customer
     --------
     :person: John Doe
     :company: Megacorp
     :address1: 1234 Corporate Way
     :address2: 
     :address3: Corpolis, CO
+    :address4: ar@megacorp.com
     :country: Corpornation
 
 
-    :Products:
+    products
     ----------
     :item1: 1 | 17 | uyqN | Two Scoops of Django: Best Practices for Django 1.5
     :item2: 1 | 29.95 | 1481879707 | Two Scoops of Django: Best Practices for Django 1.5
