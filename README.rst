@@ -42,5 +42,6 @@ Usage
 
 .. code-block:: bash
 
-    $ receiptify receipts.rst
-    4 receipts generated
+    $ simplicity receipts.rst > input/receipts.json
+    $ python receiptify.py receipts.rst
+    $ complexity
